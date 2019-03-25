@@ -1,0 +1,10 @@
+You need to move 3,000 figs 1,000 nautical miles from Figopia to Capertown.
+Your vessel can carry 1,000 figs at a time.
+When you travel a nautical mile towards Capertown you must pay a tax of 1 fig,
+however you do not pay a tax when going the other direction (towards Figopia).
+
+What is highest number of figs you can get to Capertown?
+
+///
+
+0 - costs 1x fig per mile and its 1000 miles.
