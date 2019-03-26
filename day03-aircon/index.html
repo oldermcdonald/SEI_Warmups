@@ -11,23 +11,22 @@
     // Warmup exercise - Day 3
     // Create a function to take three arguments
 
-    var airCon = function(currentTemp, status, desiredTemp) {
-        if (status == 'on' && currentTemp > desiredTemp) {
+
+    var airCon = function(currentTemp, acOn, desiredTemp) {
+        if (acOn && currentTemp > desiredTemp) {
             console.log("Turn on the A/C Please");
-        }
-        // Added this additional condition below
-        else if (status == 'on' && currentTemp < desiredTemp) {
+        } else if (acOn && currentTemp < desiredTemp) {
             console.log("Turn on the A/C Please");
-        }
-        else if (status == 'off' && currentTemp > desiredTemp) {
+        } else if (!acOn && currentTemp > desiredTemp) {
             console.log("Fix the A/C now! It's hot!")
-        }
-        else if (status == 'off' && currentTemp < desiredTemp) {
+        } else if (!acOn && currentTemp < desiredTemp) {
             console.log("Fix the A/C whenever you have the chance... It's cool...")
+        } else {
+            console.log('Its cozy')
         }
     }
+    airCon(22, true, 20);
 
-    airCon(12, 'on', 24);
 
     </script>
 </body>
