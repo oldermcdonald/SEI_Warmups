@@ -17,37 +17,71 @@ The elements in the returned array should be in the same order as in the initial
 */
 
 
-var gooseFilter= function(animals, geese){
-  animals = animals.filter(function(animal){
-    return !geese.includes(animal);
-  })
-  return animals;
-}
-
-var userInput = document.getElementsByClassName('.userInput');
-var goBtn = document.getElementsByClassName('.goBtn');
-
-
-
-
-
-var animals = ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
+var birds = ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
 
 var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
 
-console.log(gooseFilter(animals, geese));
+var birdsWithoutGeese = [];
+
+
+// First method of looping
+var gooseFilter1= function(birds, geese){
+  birds = birds.filter(function(animal){
+    return !geese.includes(animal);
+  })
+  return birds;
+}
+
+// console.log(gooseFilter1(birds, geese));
 
 
 
-// here it is with cats :)
+// Second method of looping
+var gooseFilter2 = function(){
+  for (i=0; i<birds.length; i++){
+    if (geese.indexOf(birds[i]) === -1) {
+      birdsWithoutGeese.push(birds[i]);
+    }
+  }
+  console.log(birdsWithoutGeese)
+}
 
-// var catFilter = function(people, cats){
-//   var filtered = people.filter(function(item){
-//     return !cats.includes(item); //remember the ! to take out cats
-//   });
-//   return filtered
+
+
+// Third method of looping
+var gooseFilter3 = function(){
+  birds.forEach(function(bird){
+    if (geese.indexOf(bird) === -1) {
+      birdsWithoutGeese.push(bird);
+    }
+  })
+  console.log(birdsWithoutGeese)
+}
+
+
+
+// Fourth method of looping
+var birdsWithoutGeese = birds.filter(function(bird){
+  return geese.indexOf(bird) === -1;
+})
+
+
+console.log(gooseFilter3())
+
+
+
+
+// Extension - manipulate the dom // Work in progress
+
+// var userInput = document.querySelector('.userInput');
+// var goBtn = document.querySelector('.goBtn');
+// var output = document.querySelector('.output');
+
+// var runFunc = function(){
+//   animals = userInput.filter(function(animal){
+//     return !geese.includes(animal);
+//   })
+//   output.textContent = animals;
 // }
-// var people = ['dave', 'sel', 'susan','ben','linlin','ed']
-// var cats = ['stanley', 'smee', 'gladys', 'sabi', 'harley']
-// console.log(catFilter(people, cats));
 
+// goBtn.addEventListener('click', runFunc)

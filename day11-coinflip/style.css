@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: peru;
+}
+
+.img-cropper {
+  width: 20em;
+  height: 20em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.coin {
+  display: block;
+  width: 20em;
+  filter: grayscale(100%)
+}
+
