@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.colour-box {
+  border: 2px solid #c2c2a3;
+  border-radius: 1em;
+  height: 100px;
+  width: 100px;
+  margin: 1em;
+  color: white;
+  background-color: #d6d6c2;
+  transition: all .2s linear;
+  cursor: pointer;
+  text-align: center;
+  padding: 35px;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.colour-box:hover {
+  border: 2px solid #e6e600;
+  filter: drop-shadow(0 0 0.3em #ffff4d);
+}
+
+.red {
+  background-color: #ff5050;
+  border-color: #ff0000;
+}
+
+.green {
+  background-color: #39ac39;
+  border-color: #2d862d;
+}
