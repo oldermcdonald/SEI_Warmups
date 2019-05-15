@@ -46,15 +46,12 @@ class Say
   def in_english(num)
     below20 = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
 
-
     above20 = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
 
-    # numbers below 20
     if num < 20
       return below20[num].capitalize
     end
     
-    # numbers above 20
     if num >= 20
       combined = []
       combined << above20[num.digits.last-2]
@@ -70,6 +67,5 @@ end
 
 puts 'enter a number between 0 and 99, inclusive'
 input = gets.chomp
-
 Say.new(input)
 
