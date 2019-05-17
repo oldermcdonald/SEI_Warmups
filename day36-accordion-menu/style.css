@@ -1,0 +1,70 @@
+img {
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+a:visited {
+
+}
+
+body {
+  background-color: #2e2c41;
+}
+
+.accordion {
+  margin: 1em;
+  background-color: white;
+  color: #58585a;
+  width: 20em;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-item header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0.5em;
+  height: 2em;
+  border-bottom: 1px solid grey;
+}
+
+/* This is not removing last border */
+.menu-item header:last-child {
+  border-bottom: none;
+}
+
+/* Fix this layout */
+.menu-item header span:last-of-type {
+  margin-left: 10em;
+}
+
+.menu-item:hover {
+  color: #b63b4d;
+}
+
+.menu-links {
+  background-color: #454258;
+  color: white;
+}
+
+.menu-links a:hover {
+  background-color: #b63b4d;
+}
+
+.menu-links a {
+  display: block;
+  height: 1.5em;
+  padding: 0.2em;
+}
+
+.hide {
+  display: none;
+}
