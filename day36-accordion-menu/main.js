@@ -18,7 +18,9 @@ const handleClick = event => {
   console.log('clicked')
 
   // First hide all menu links
-  menuHeaders.toggleClass()
+  menuHeaders.forEach(menuHead => {
+    menuHead.
+  })
 
 
   // Then turn on hide class on target
