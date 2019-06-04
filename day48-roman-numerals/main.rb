@@ -53,13 +53,15 @@
 
 
 
+# Looking for a solution that doesn't involve a bunch of if conditions...
+# hardcoded the minus numbers to simplify algorithm ie 4, 9, 40 and treated these as edge cases
 
 # Give number 534 (Expect 'DXXXIV')
 
 # is 534 divisible by 1000? => no
 # ...
 # is 534 divisible by 500? => yes
-# How many fit into it? (quotient) => 1 >>'D'
+# How many fit into it? (quotient) => 1 >> 'D'
 # How many left over? (modulus) = 34
 
 # is 34 divisible by 1000? => no
@@ -73,6 +75,8 @@
 # is 4 divisible by 4? => yes >> 'IV'
 
 # Result = 'DXXIV'
+
+# divmod???
 
 
 
@@ -98,8 +102,30 @@ def convert_to_roman(num)
 
   result = ""
 
+  # check each key against num
+  # if num greater than key value
+  # add key value to empty string
+  # minus the key from the num
+  # loop through again
+
+  # standard solution without divmod :(
   roman_numerals.keys.each do |key|
-    if num % key
+    p "is #{num} greater than or equal to #{key}?"
+    if num >= key
+      p "yes - adding #{roman_numerals[key]}"
+      result << roman_numerals[key]
+      num = num - key
+
+      nested loop to continue looking at this key
+      if (num >= key)
+        p "is #{num} greater than or equal to #{key}?"
+        result << roman_numerals[key]
+        num = num - key
+      end
+
+    else
+      p "no"
+    end
   end
 
   return result
@@ -107,6 +133,6 @@ end
 
 
 puts 'enter a number'
-number = gets.chomp
+number = gets.chomp.to_i
 
 puts convert_to_roman(number)
